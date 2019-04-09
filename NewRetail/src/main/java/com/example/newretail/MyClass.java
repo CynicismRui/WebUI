@@ -43,7 +43,6 @@ public class MyClass extends BaseURL {
         new Login().LoginID(webDriver);
 
         //截取当前页面
-        new GetCutOut().getInto(webDriver);
         Thread.sleep(2000);
 
         deviceUse.click(webDriver, By.id("shangpinguanli"));
@@ -73,7 +72,6 @@ public class MyClass extends BaseURL {
         deviceUse.radioOption(webDriver, By.name("is_daili"), "is_daili");
         deviceUse.radioOption(webDriver, By.name("is_wuxing"), "is_daili");
         deviceUse.radioOption(webDriver, By.name("is_jiuxing"), "is_daili");
-
 
         new ImageUpload().imageUpload(webDriver, By.name("img"));
         new ImageUpload().imagesUpload(webDriver, By.name("lun_img[]"));

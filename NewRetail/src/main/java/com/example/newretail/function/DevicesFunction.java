@@ -9,6 +9,10 @@ import org.openqa.selenium.WebDriver;
  * radioOption 下拉列表操作
  *
  * click 控件点击
+ *
+ * CloseThePage 关闭页面
+ *
+ * IsElementPresent 判断元素是否存在
  */
 public interface DevicesFunction {
 
