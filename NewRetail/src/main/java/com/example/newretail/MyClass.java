@@ -82,15 +82,15 @@ public class MyClass extends BaseURL {
 
         //商品发布提交
 //        new DeviceUse().click(webDriver,By.name("Submit"));
-//        LoginToExit();
+        LoginToExit();
 
         //关闭浏览器
-//        CloseThePage();
+        deviceUse.CloseThePage(webDriver);
     }
 
 
     //平台账号退出
-    private static void LoginToExit() throws NoSuchElementException, InterruptedException {
+    private static void LoginToExit() {
 
 
         if (new DeviceUse().IsElementPresent(webDriver, By.className("tuichu"))) {
@@ -103,7 +103,11 @@ public class MyClass extends BaseURL {
 
         System.out.println(webDriver.getPageSource());
 
-        Thread.sleep(2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement ExitButton = ((FirefoxDriver) webDriver).findElementByClassName("layui-layer-btn0");
         ExitButton.click();
