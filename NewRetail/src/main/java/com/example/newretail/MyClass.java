@@ -20,7 +20,7 @@ public class MyClass extends BaseURL {
 
     private static WebDriver webDriver = new FirefoxDriver();
 
-    private static DeviceUse deviceUse= new DeviceUse();
+    private static DeviceUse deviceUse = new DeviceUse();
 
 
     public static void main(String[] args) throws Exception {
@@ -88,10 +88,8 @@ public class MyClass extends BaseURL {
         deviceUse.CloseThePage(webDriver);
     }
 
-
     //平台账号退出
     private static void LoginToExit() {
-
 
         if (new DeviceUse().IsElementPresent(webDriver, By.className("tuichu"))) {
 //            WebDriverWait wait = new WebDriverWait(webDriver, 10);
@@ -109,11 +107,8 @@ public class MyClass extends BaseURL {
             e.printStackTrace();
         }
 
-        WebElement ExitButton = ((FirefoxDriver) webDriver).findElementByClassName("layui-layer-btn0");
-        ExitButton.click();
-
+        deviceUse.click(webDriver, By.className("layui-layer-btn0"));
     }
-
 
     private static void pullDownList(By by, String text) throws InterruptedException {
 
@@ -133,8 +128,6 @@ public class MyClass extends BaseURL {
                 case "1":
                     select.selectByVisibleText(text);
                     break;
-
-
             }
         }
     }

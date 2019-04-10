@@ -46,10 +46,10 @@ public class DeviceUse implements DevicesFunction {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
+            webDriver.quit();
         }
 
-        webDriver.quit();
+
 
         System.out.println("----------------测试结束------------------");
     }
