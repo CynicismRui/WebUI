@@ -21,10 +21,10 @@ public class DeviceUse implements DevicesFunction {
         WebElement is_element = webDriver.findElement(by);
         if (is_element.isSelected()) switch (is_element.getAttribute("value")) {
             case "0":
-                click(webDriver, By.id(name + "_no"));
+                click(webDriver, By.id(name + "_yes"));
                 break;
             case "1":
-                click(webDriver, By.id(name + "_yes"));
+                click(webDriver, By.id(name + "_no"));
                 break;
         }
 

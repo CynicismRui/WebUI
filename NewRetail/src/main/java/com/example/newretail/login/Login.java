@@ -17,7 +17,7 @@ public class Login implements LoginInterface {
     //判断元素是否存在
     @Override
     public void LoginID(WebDriver webDriver) throws InterruptedException {
-        if (IsElementPresent(webDriver,By.id("name"))) {
+        if (IsElementPresent(webDriver,By.xpath("/html/body/div[2]/div/ul/li[1]/p"))) {
 
             //输入关键字搜索
             WebElement userBox = webDriver.findElement(By.cssSelector("input#name"));
@@ -27,11 +27,12 @@ public class Login implements LoginInterface {
 
                 Actions actions = new Actions(webDriver);
                 actions.moveToElement(userBox);
+                actions.click();
                 userBox.sendKeys("17736085289");
-
                 Thread.sleep(1000);
 
                 actions.moveToElement(passBox);
+                actions.click();
                 passBox.sendKeys("085289");
                 String currentUrl = webDriver.getCurrentUrl();
 
@@ -39,6 +40,7 @@ public class Login implements LoginInterface {
             }
 
         } else {
+
             Assert.fail("-----------------输入框不存在----------------");
         }
 

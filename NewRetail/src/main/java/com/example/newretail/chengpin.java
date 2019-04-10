@@ -8,6 +8,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class chengpin {
     private WebDriver driver;
@@ -15,8 +18,13 @@ public class chengpin {
 
     @Before
     public void beforeEach() {
-        System.setProperty("webdriver.chrome.driver","D:\\software\\java-jar+utils\\seleniumForChrome\\chromedriver2.40_win32\\chromedriver.exe");
-        driver = new ChromeDriver();
+        //如果火狐浏览器没有默认安装在C盘，需要制定其路径
+        System.setProperty("webdriver.gecko.driver", "E:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\geckodriver.exe");
+        driver = new FirefoxDriver();
+        //Puts a Implicit wait, Will wait for 10 seconds before throwing exception
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        System.setProperty("webdriver.chrome.driver","D:\\software\\java-jar+utils\\seleniumForChrome\\chromedriver2.40_win32\\chromedriver.exe");
+//        driver = new ChromeDriver();
     }
 
     @After

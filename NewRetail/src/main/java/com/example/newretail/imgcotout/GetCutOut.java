@@ -20,7 +20,7 @@ public class GetCutOut implements IMGCutOut {
         try {
             File srcFile = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
             long time = new Date().getTime();
-            FileUtils.copyFile(srcFile, new File("e:\\phone\\screenshot"+time+".png"));      //指定图片的保存路径及文件名
+            FileUtils.copyFile(srcFile, new File("e:\\photo\\screenshot"+time+".png"));      //指定图片的保存路径及文件名
         } catch (Exception e) {
             e.printStackTrace();
         }
