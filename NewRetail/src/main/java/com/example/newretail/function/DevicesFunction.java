@@ -3,17 +3,8 @@ package com.example.newretail.function;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * sendKeys 输入框输入
- *
- * radioOption 下拉列表操作
- *
- * click 控件点击
- *
- * CloseThePage 关闭页面
- *
- * IsElementPresent 判断元素是否存在
- */
+import sun.reflect.generics.tree.VoidDescriptor;
+
 public interface DevicesFunction {
 
     void sendKeys(WebDriver webDriver, By by, String value);
@@ -25,6 +16,14 @@ public interface DevicesFunction {
     void CloseThePage(WebDriver webDriver);
 
     boolean IsElementPresent(WebDriver webDriver,By by);
+
+    void CheckBox(WebDriver webDriver,By by);
+
+    void pullDownList(WebDriver webDriver,By by, String text);
+
+    void clickElementContainingText(WebDriver webDriver,By by, String text);
+
+    void JavascriptExecutor(WebDriver webDriver);
 
 
 }

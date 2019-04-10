@@ -6,10 +6,13 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * 退出平台账号
+ */
 public class UserToExit implements ToExit {
 
 
-    //exit
+
     @Override
     public void LoginToExit(WebDriver webDriver) {
 

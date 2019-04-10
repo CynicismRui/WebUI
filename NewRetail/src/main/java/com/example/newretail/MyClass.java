@@ -36,7 +36,7 @@ public class MyClass extends BaseURL {
     }
 
     @Test
-    public void main()  {
+    public void main() {
 
         try {
             //请求地址
@@ -49,21 +49,19 @@ public class MyClass extends BaseURL {
             //平台账号登录
             new Login().LoginID(webDriver);
 
-            //截取当前页面
-            Thread.sleep(2000);
-
-            deviceUse.click(webDriver, By.className("/html/body/div[1]/div[2]/div[1]/div/h3[3]/span"));
+            deviceUse.click(webDriver, By.id("shangpinguanli"));
+            Thread.sleep(3000);
             deviceUse.click(webDriver, By.linkText("商品发布"));
 
             //判断一级商品类型是否存在
             if (deviceUse.IsElementPresent(webDriver, By.id("yi_type_id"))) {
 
-                pullDownList(By.id("yi_type_id"), "阳光文具");
+                deviceUse.pullDownList(webDriver, By.id("yi_type_id"), "阳光文具");
             }
 
             if (deviceUse.IsElementPresent(webDriver, By.id("type_id"))) {
 
-                pullDownList(By.id("type_id"), "");
+                deviceUse.pullDownList(webDriver, By.id("type_id"), "");
             }
 
             if (deviceUse.IsElementPresent(webDriver, By.id("name"))) {
@@ -96,50 +94,10 @@ public class MyClass extends BaseURL {
 
             //关闭浏览器
             deviceUse.CloseThePage(webDriver);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    private static void pullDownList(By by, String text) throws InterruptedException {
-
-        webDriver.getCurrentUrl();
-        System.out.println(webDriver.getPageSource());
-
-        Select select = new Select(webDriver.findElement(by));
-        List<WebElement> allOptions = select.getAllSelectedOptions();
-
-        for (WebElement e : allOptions) {
-            e.click();
-
-            Thread.sleep(2000);
-            switch (e.getAttribute("value")) {
-                case "":
-                    select.selectByVisibleText(text);
-                case "1":
-                    select.selectByVisibleText(text);
-                    break;
-            }
-        }
-    }
-
-
-    private void clickElementContainingText(By by, String text) {
-
-        List<WebElement> elementList = webDriver.findElements(by);
-
-        for (WebElement e : elementList) {
-
-            if (e.getText().contains(text)) {
-
-                e.click();
-
-                break;
-
-            }
-
-        }
-
     }
 
 }
