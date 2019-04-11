@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -84,7 +85,6 @@ public class MyClass extends BaseURL {
 
             new DeviceUse().sendKeys(webDriver, By.id("brief"), "测试商品");
             new ImageUpload().imagesUpload(webDriver, By.name("content_image"));
-
 
             //商品发布提交
 //        new DeviceUse().click(webDriver,By.name("Submit"));
