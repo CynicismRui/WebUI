@@ -62,9 +62,9 @@ public class DeviceUse implements DevicesFunction {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            webDriver.quit();
         }
 
+        webDriver.quit();
 
         System.out.println("----------------测试结束------------------");
     }
@@ -148,7 +148,7 @@ public class DeviceUse implements DevicesFunction {
     public void JavascriptExecutor(WebDriver webDriver) {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
 
-        js.executeScript("$('#btn').click(function()");
+        js.executeScript("$('#yi_type_id ').click(function()");
     }
 
 

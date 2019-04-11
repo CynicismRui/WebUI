@@ -1,14 +1,12 @@
 package com.example.newretail.login;
 
 import com.example.newretail.function.DeviceUse;
-import com.example.newretail.function.DevicesFunction;
+
 import com.example.newretail.imgcotout.GetCutOut;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.NoSuchElementException;
 
@@ -25,14 +23,9 @@ public class Login implements LoginInterface {
 
             if (userBox.isEnabled() && passBox.isEnabled()) {
 
-                Actions actions = new Actions(webDriver);
-                actions.moveToElement(userBox);
-                actions.click();
+
                 userBox.sendKeys("17736085289");
                 Thread.sleep(1000);
-
-                actions.moveToElement(passBox);
-                actions.click();
                 passBox.sendKeys("085289");
                 String currentUrl = webDriver.getCurrentUrl();
 
